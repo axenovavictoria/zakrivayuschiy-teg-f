@@ -14,3 +14,387 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
+
+/* Здесь вы напишете основную часть стилей страницы. */
+
+.page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-family: var(--font-family-main);
+  font-variation-settings: "wght" var(--font-weight-regular);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+}
+
+/* Шапка */
+.header {
+  width: var(--content-width);
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(80px, 15vw, 130px) clamp(20px, 8vw, 122.5px);
+  margin-bottom: 98px;
+  font-family: var(--font-family-accent);
+  text-transform: uppercase;
+}
+
+.header__logo {
+  font-size: clamp(3.0625rem, 10vw, 4.0625rem);
+  line-height: 100%;
+  margin-bottom: 20px;
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 4vw, 0.875rem);
+  line-height: 100%;
+}
+
+
+/* Основной контент */
+.content {
+  width: var(--content-width);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Карточка */
+.card {
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+}
+
+.card__title {
+  font-family: var(--font-family-main);
+  font-variation-settings: "wght" var(--font-weight-bold);
+  font-size: 18px;
+  line-height: 100%;
+  padding: 5px 10px;
+  border-bottom: 2px solid var(--main-color);
+}
+
+.card__image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: -1px 0 var(--background-color), 0 1px var(--background-color),
+    1px 0 var(--background-color), 0 -1px var(--background-color);
+}
+
+@supports (text-stroke: 1px var(--background-color)) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
+  }
+}
+
+.card__content {
+  padding: 25px;
+  border-top: 2px solid var(--main-color);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.card__paragraph {
+  font-family: var(--font-family-main);
+  font-variation-settings: "wght" var(--font-weight-regular);
+  font-size: 18px;
+  line-height: 21px;
+}
+
+/* Кнопки карточки */
+.card__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.card__icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--main-color);
+  outline: none;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--main-color);
+}
+
+.card__like-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card__like-button:hover::before {
+  transform: translateX(0);
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  line-height: 90%;
+  color: var(--main-color);
+  mix-blend-mode: normal;
+}
+
+/* Кнопка сохранения */
+.save-button {
+  width: fit-content;
+  margin: 50px auto 0;
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+  cursor: pointer;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.save-button:focus {
+  outline: none;
+}
+
+.save-button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--main-color);
+}
+
+.save-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.save-button:hover::before {
+  transform: translateX(0);
+}
+
+.save-button__icon {
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  color: var(--main-color);
+  mix-blend-mode: difference;
+}
+
+.save-button .button__text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  line-height: 90%;
+  color: var(--main-color);
+  mix-blend-mode: difference;
+}
+
+/* Адаптив для мобильных устройств */
+@media (width <= 375px) {
+  .save-button {
+    flex-direction: column;
+  }
+}
+
+/* Модальное окно */
+.dialog {
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+  padding: 30px;
+  max-width: 357px;
+  width: 100%;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog:not([open]) {
+  display: none;
+}
+
+.dialog__content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dialog__icon {
+  width: 39px;
+  height: 39px;
+}
+
+.dialog__text {
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  max-width: 234px;
+}
+
+.dialog__button {
+  width: 100%;
+  background-color: var(--background-color);
+  border: 2px solid var(--main-color);
+  cursor: pointer;
+  padding: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.dialog__button:focus {
+  outline: none;
+}
+
+.dialog__button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--main-color);
+}
+
+.dialog__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.dialog__button:hover::before {
+  transform: translateX(0);
+}
+
+/* Фильтры для изображений */
+.filter-grayscale {
+  filter: grayscale(0.8);
+}
+
+.filter-sepia {
+  filter: sepia(0.9);
+}
+
+.filter-blur {
+  filter: blur(3px);
+}
+
+.filter-brightness {
+  filter: brightness(1.5);
+}
+
+.filter-contrast {
+  filter: contrast(1.5);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.filter-invert {
+  filter: invert(0.8);
+}
+
+.filter-multiple {
+  filter: contrast(1.5) brightness(1.2) saturate(1.5);
+}
+
+/* Адаптив для мобильных устройств */
+@media (width <= 375px) {
+  .save-button {
+    flex-direction: column;
+  }
+
+  .card__label {
+    right: 13px;
+    top: 23px;
+  }
+}
+
+.dialog__button .button__text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-family-accent);
+  font-size: 14px;
+  line-height: 90%;
+  color: var(--main-color);
+  mix-blend-mode: normal;
+}
