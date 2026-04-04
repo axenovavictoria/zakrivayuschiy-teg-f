@@ -13,13 +13,6 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-}
-
-/* Здесь вы напишете основную часть стилей страницы. */
-
-.page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
   font-family: var(--font-family-main);
   font-variation-settings: "wght" var(--font-weight-regular);
   background-image: var(--bg-gradient);
@@ -262,13 +255,6 @@
   line-height: 90%;
   color: var(--main-color);
   mix-blend-mode: difference;
-}
-
-/* Адаптив для мобильных устройств */
-@media (width <= 375px) {
-  .save-button {
-    flex-direction: column;
-  }
 }
 
 /* Модальное окно */
