@@ -1,1 +1,1 @@
-https://axenovavictoria.github.io/zakrivayuschiy-teg-f/
+https://github.com/axenovavictoria/zakrivayuschiy-teg-f
