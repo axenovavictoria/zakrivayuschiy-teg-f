@@ -309,7 +309,7 @@
 /* Адаптив для мобильных устройств */
 @media (width <= 375px) {
   .header {
-    margin: 100px auto;
+    margin: 0 auto 100px;
     min-block-size: 326px;
   }
 
