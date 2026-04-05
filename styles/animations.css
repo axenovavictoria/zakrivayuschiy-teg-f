@@ -73,7 +73,7 @@
 
 /* Состояние is-liked */
 .like-icon.is-liked {
-  animation: heart-scale 0.3s ease-in 0.1s 1 forwards;
+  animation: heart-scale 0.3s ease-in 0.1s 1;
 }
 
 .like-icon.is-liked .core {
@@ -93,5 +93,5 @@
 
 .like-icon.is-liked .sparks {
   fill: var(--animation-fill-color);
-  animation: sparks-animation 0.3s ease-in 0.3s 1 forwards;
+  animation: sparks-animation 0.3s ease-in 0.3s 1;
 }
